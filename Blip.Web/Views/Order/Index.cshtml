@@ -67,13 +67,13 @@
                             </tr>
                         }
                     }
-                    @*<tr>
+                    <tr>
                         <td>
-                            @Html.ActionLink("Add", "Edit", new { customerid = Model.CustomerID, orderid = Model.OrderID }, htmlAttributes: new { @class = "btn btn-success" })
+                            @Html.ActionLink("Add", "Create", new { customerid = Model.CustomerID, orderid = Guid.NewGuid() }, htmlAttributes: new { @class = "btn btn-success" })
                         </td>
                         <td></td>
                         <td></td>
-                    </tr>*@
+                    </tr>
                 </table>
             </div>
         </div>

@@ -2,6 +2,7 @@
 using System.Net;
 using System.Web.Mvc;
 using Blip.Data.Orders;
+using Blip.Entities.Orders;
 using Blip.Entities.Orders.ViewModels;
 
 namespace BlipProjects.Controllers
@@ -37,6 +38,15 @@ namespace BlipProjects.Controllers
                 return View(model);
             }
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
+
+        public ActionResult Create(Guid customerId, Guid orderId)
+        {
+            var orderModel = new Order();
+            orderModel.CustomerID = customerId;
+            orderModel.OrderID = orderId;
+
+            return View(orderModel);
         }
     }
 }
